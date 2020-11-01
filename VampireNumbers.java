@@ -42,30 +42,30 @@ public class VampireNumbers {
                     digits.add(d);
                 }
                 // check if digits of fangs exist in vampire number
-                boolean breakLoop = false;
+                boolean continueLoop = false;
                 for (int c = 0; c < fang1Str.length(); c++) {
                     Character d = fang1Str.charAt(c);
                     if (digits.contains(d)) {
                         digits.remove(d);
                     } else {
-                        breakLoop = true;
+                        continueLoop = true;
                         break;
                     }
                 }
-                if (breakLoop) {
-                    break;
+                if (continueLoop) {
+                    continue;
                 }
                 for (int c = 0; c < fang2Str.length(); c++) {
                     Character d = fang2Str.charAt(c);
                     if (digits.contains(d)) {
                         digits.remove(d);
                     } else {
-                        breakLoop = true;
+                        continueLoop = true;
                         break;
                     }
                 }
-                if (breakLoop) {
-                    break;
+                if (continueLoop) {
+                    continue;
                 }
                 // found a vampire number!
                 System.out.printf("%d * %d = %d\n", fang1, fang2, fang1 * fang2);
